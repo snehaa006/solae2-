@@ -1,0 +1,104 @@
+.frame {
+  --frame-r: var(--radius-lg);
+  --frame-bg: transparent;
+  position: relative;
+  width: 100%;
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--frame-r);
+  background: var(--frame-bg);
+  isolation: isolate;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.square {
+  --frame-r: 0;
+}
+
+.arch {
+  --frame-r: var(--radius-arch);
+}
+
+.oval {
+  --frame-r: 50%;
+}
+
+.ring::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * clamp(5px, 0.6vw, 9px));
+  border: 1px solid var(--ring-c, currentColor);
+  border-radius: var(--frame-r);
+  pointer-events: none;
+}
+
+.arch.ring::after {
+  border-radius: 999px 999px 20px 20px;
+}
+
+.ticket .inner {
+  --n: clamp(1.25rem, 0.8rem + 1.8vw, 2.5rem);
+  border-radius: var(--radius-md);
+  -webkit-mask:
+    radial-gradient(var(--n) at 0 0, #0000 98%, #000) 0 0 / 51% 51% no-repeat,
+    radial-gradient(var(--n) at 100% 0, #0000 98%, #000) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(var(--n) at 0 100%, #0000 98%, #000) 0 100% / 51% 51% no-repeat,
+    radial-gradient(var(--n) at 100% 100%, #0000 98%, #000) 100% 100% / 51% 51% no-repeat;
+  mask:
+    radial-gradient(var(--n) at 0 0, #0000 98%, #000) 0 0 / 51% 51% no-repeat,
+    radial-gradient(var(--n) at 100% 0, #0000 98%, #000) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(var(--n) at 0 100%, #0000 98%, #000) 0 100% / 51% 51% no-repeat,
+    radial-gradient(var(--n) at 100% 100%, #0000 98%, #000) 100% 100% / 51% 51% no-repeat;
+}
+
+/* postage stamp: round bites out of a paper border (technique after Temani Afif) */
+.stamp {
+  filter: drop-shadow(0 12px 18px rgba(4, 41, 43, 0.18));
+}
+
+.stamp .inner {
+  --r: clamp(5px, 0.5vw, 8px);
+  border-radius: 0;
+  padding: calc(2.2 * var(--r));
+  background: var(--color-sunshine-50);
+  -webkit-mask:
+    radial-gradient(var(--r), #0000 98%, #000) round calc(-1.5 * var(--r)) calc(-1.5 * var(--r)) / calc(3 * var(--r)) calc(3 * var(--r)),
+    linear-gradient(#000 0 0) no-repeat 50% / calc(100% - 3 * var(--r)) calc(100% - 3 * var(--r));
+  mask:
+    radial-gradient(var(--r), #0000 98%, #000) round calc(-1.5 * var(--r)) calc(-1.5 * var(--r)) / calc(3 * var(--r)) calc(3 * var(--r)),
+    linear-gradient(#000 0 0) no-repeat 50% / calc(100% - 3 * var(--r)) calc(100% - 3 * var(--r));
+}
+
+.stamp .img {
+  background: var(--frame-bg);
+}
+
+/* a quiet placeholder while a photo loads */
+.photo {
+  --frame-bg: var(--color-lagoon-100);
+}
+
+.tone-lagoon {
+  --frame-bg: var(--color-lagoon-100);
+}
+
+.tone-coral {
+  --frame-bg: var(--color-coral-100);
+}
+
+.tone-sunshine {
+  --frame-bg: var(--color-sunshine-200);
+}
+
+.tone-paper {
+  --frame-bg: var(--color-sunshine-50);
+}

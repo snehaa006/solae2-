@@ -1,0 +1,83 @@
+.lagoon {
+  --band: var(--color-lagoon-300);
+  --band-ink: var(--color-lagoon-900);
+}
+
+.coral {
+  --band: var(--color-coral-300);
+  --band-ink: var(--color-coral-900);
+}
+
+.sunshine {
+  --band: var(--color-sunshine-500);
+  --band-ink: var(--color-sunshine-950);
+}
+
+.stripes {
+  position: relative;
+  display: grid;
+  align-content: start;
+  background: repeating-linear-gradient(90deg, var(--band) 0 var(--stripe), var(--color-sunshine-50) var(--stripe) calc(2 * var(--stripe)));
+  color: var(--band-ink);
+}
+
+.rounded {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-m);
+  padding: var(--space-s) var(--space-m);
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.checker {
+  height: calc(var(--cell) * 2);
+  background:
+    conic-gradient(var(--band-solid) 25%, transparent 0 50%, var(--band-solid) 0 75%, transparent 0) 0 0 / calc(var(--cell) * 2) calc(var(--cell) * 2),
+    var(--color-sunshine-50);
+}
+
+.single {
+  height: var(--cell);
+  background:
+    linear-gradient(90deg, var(--band-solid) 50%, transparent 0) 0 0 / calc(var(--cell) * 2) 100%,
+    var(--color-sunshine-50);
+}
+
+.checker.lagoon {
+  --band-solid: var(--color-lagoon-700);
+}
+
+.checker.coral {
+  --band-solid: var(--color-coral-500);
+}
+
+.checker.sunshine {
+  --band-solid: var(--color-sunshine-500);
+}
+
+.edge {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.edge-top {
+  bottom: calc(100% - 1px);
+}
+
+.edge-bottom {
+  top: calc(100% - 1px);
+  transform: scaleY(-1);
+}

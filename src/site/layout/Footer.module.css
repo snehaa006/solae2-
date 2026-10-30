@@ -1,0 +1,134 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-sunshine-200);
+  color: var(--text-body);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: calc(var(--container) + 2 * var(--space-gutter));
+  margin-inline: auto;
+  padding: var(--space-2xl) var(--space-gutter) var(--space-l);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 0.7fr 1.6fr;
+  gap: var(--space-xl) var(--space-l);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about,
+  .news {
+    grid-column: 1 / -1;
+  }
+}
+
+.about {
+  display: grid;
+  align-content: start;
+  gap: var(--space-s);
+  max-width: 22rem;
+  font-size: var(--step--1);
+}
+
+.logo {
+  width: 9rem;
+}
+
+.social {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border-default);
+  border-radius: 50%;
+  color: var(--text-strong);
+  transition: background-color var(--dur-base) var(--ease-standard);
+}
+
+.social a:hover {
+  background: var(--color-sunshine-50);
+}
+
+.head {
+  margin-bottom: var(--space-s);
+  color: var(--text-strong);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0;
+  list-style: none;
+}
+
+.list a {
+  text-decoration: none;
+}
+
+.list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.news {
+  display: grid;
+  align-content: start;
+  gap: var(--space-s);
+}
+
+.newsHead {
+  font-size: var(--step-3);
+  font-weight: 340;
+  line-height: var(--lh-snug);
+}
+
+.newsHead em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.news p {
+  font-size: var(--step--1);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--border-default);
+  color: var(--text-muted);
+  font-size: var(--step--2);
+  letter-spacing: 0.06em;
+}
+
+/* the sun sets into the bottom edge: rays and the top of the disc show, the horizon line is cut off */
+.sunset {
+  width: min(92vw, 46rem);
+  margin: var(--space-l) auto 0;
+  margin-bottom: calc(-1 * min(8vw, 4.25rem));
+}
+
+.sunset svg {
+  width: 100%;
+}

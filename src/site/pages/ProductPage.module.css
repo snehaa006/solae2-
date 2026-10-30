@@ -1,0 +1,228 @@
+.page {
+  padding-top: var(--space-m);
+  padding-bottom: var(--space-2xl);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--space-l);
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  text-transform: capitalize;
+}
+
+.crumbs a {
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.crumbs [aria-current] {
+  color: var(--text-strong);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: var(--space-s);
+}
+
+.main {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.mainArt {
+  position: absolute;
+  inset: 8% 9%;
+  width: auto;
+}
+
+.burst {
+  position: absolute;
+  top: -3%;
+  right: -3%;
+}
+
+.thumbs {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  align-content: start;
+  gap: var(--space-xs);
+}
+
+@media (max-width: 560px) {
+  .gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .main {
+    grid-column: 1;
+  }
+
+  .thumbs {
+    grid-row: 2;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.thumb {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  padding: 0.25rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-sunken);
+  transition: border-color var(--dur-base) var(--ease-standard);
+}
+
+.thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.thumb[aria-pressed="true"] {
+  border-color: var(--text-strong);
+  box-shadow: inset 0 0 0 1px var(--text-strong);
+}
+
+.info {
+  position: sticky;
+  top: 6.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-m);
+}
+
+.titleBlock {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.price {
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 340;
+}
+
+.guide {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  text-underline-offset: 0.2em;
+}
+
+.error {
+  margin-top: 0.5rem;
+  color: var(--state-danger);
+  font-size: var(--step--1);
+}
+
+.buy {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.add {
+  flex: 1;
+  min-width: 0;
+  white-space: normal;
+}
+
+@media (max-width: 560px) {
+  .add {
+    padding-inline: 1.2em;
+    font-size: var(--step--1);
+  }
+}
+
+.ship {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.sizes {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+
+.sizes th,
+.sizes td {
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+.sizes th {
+  color: var(--text-strong);
+  font-weight: var(--fw-medium);
+}
+
+/* complete the look: Sage's giant word behind the products */
+.related {
+  overflow: hidden;
+}
+
+.relatedWord {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -42%;
+  color: var(--color-lagoon-100);
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 4rem + 30vw, 34rem);
+  font-weight: 300;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+}
+
+.relatedInner {
+  position: relative;
+}
+
+.relatedHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  margin-bottom: var(--space-l);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-l) var(--space-m);
+  padding: 0;
+  list-style: none;
+}

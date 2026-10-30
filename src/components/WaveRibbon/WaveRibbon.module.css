@@ -1,0 +1,45 @@
+.ribbon {
+  position: relative;
+  width: 100%;
+  height: clamp(7rem, 5rem + 9vw, 13.75rem);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ribbon svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.band {
+  fill: none;
+  stroke: var(--rb-bg);
+  stroke-width: 46;
+  stroke-linecap: butt;
+}
+
+.text {
+  fill: var(--rb-fg);
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+.coral {
+  --rb-bg: var(--color-coral-200);
+  --rb-fg: var(--color-coral-900);
+}
+
+.lagoon {
+  --rb-bg: var(--color-lagoon-200);
+  --rb-fg: var(--color-lagoon-950);
+}
+
+.sunshine {
+  --rb-bg: var(--color-sunshine-500);
+  --rb-fg: var(--color-lagoon-950);
+}

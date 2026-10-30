@@ -1,0 +1,111 @@
+.marquee {
+  overflow: hidden;
+  background: var(--mq-bg);
+  color: var(--mq-fg);
+  -webkit-mask: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.lagoon {
+  --mq-bg: var(--color-lagoon-700);
+  --mq-fg: var(--color-sunshine-50);
+  --mq-sep: var(--color-sunshine-500);
+}
+
+.coral {
+  --mq-bg: var(--color-coral-500);
+  --mq-fg: var(--color-lagoon-950);
+  --mq-sep: var(--color-sunshine-50);
+}
+
+.sunshine {
+  --mq-bg: var(--color-sunshine-500);
+  --mq-fg: var(--color-lagoon-950);
+  --mq-sep: var(--color-coral-600);
+}
+
+.plain {
+  --mq-bg: transparent;
+  --mq-fg: var(--text-strong);
+  --mq-sep: var(--color-coral-500);
+  -webkit-mask: none;
+  mask: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--speed) linear infinite;
+}
+
+.reverse .track {
+  animation-direction: reverse;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+.run {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.item {
+  white-space: nowrap;
+}
+
+.sep {
+  width: 1em;
+  height: 1em;
+  margin-inline: 1.4em;
+  color: var(--mq-sep);
+  flex-shrink: 0;
+}
+
+.sm {
+  padding-block: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.md {
+  padding-block: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.lg {
+  padding-block: 0.4rem;
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 340;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  letter-spacing: -0.01em;
+}
+
+.lg .sep {
+  width: 0.55em;
+  height: 0.55em;
+  margin-inline: 0.7em;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
