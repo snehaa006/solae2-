@@ -1,0 +1,79 @@
+.tag {
+  --tag-c: var(--text-strong);
+  --tag-soft: var(--bg-sunken);
+  --tag-on: var(--bg-canvas);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 1.3em 0.45em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.sm {
+  padding: 0.35em 0.95em 0.3em;
+  font-size: var(--step--2);
+}
+
+.lagoon {
+  --tag-c: var(--color-lagoon-700);
+  --tag-soft: var(--color-lagoon-100);
+  --tag-solid: var(--color-lagoon-700);
+  --tag-on: var(--color-sunshine-50);
+}
+
+.coral {
+  --tag-c: var(--color-coral-700);
+  --tag-soft: var(--color-coral-100);
+  --tag-solid: var(--color-coral-500);
+  --tag-on: var(--color-lagoon-950);
+}
+
+.sunshine {
+  --tag-c: var(--color-sunshine-900);
+  --tag-soft: var(--color-sunshine-200);
+  --tag-solid: var(--color-sunshine-500);
+  --tag-on: var(--color-lagoon-950);
+}
+
+.ink {
+  --tag-solid: var(--text-strong);
+}
+
+.outline {
+  border-color: var(--tag-c);
+  color: var(--tag-c);
+}
+
+.soft {
+  background: var(--tag-soft);
+  color: var(--tag-c);
+}
+
+.solid {
+  background: var(--tag-solid);
+  color: var(--tag-on);
+}
+
+.interactive {
+  cursor: pointer;
+  transition:
+    background-color var(--dur-base) var(--ease-standard),
+    color var(--dur-base) var(--ease-standard);
+}
+
+.interactive.outline:hover,
+.interactive[aria-pressed="true"] {
+  background: var(--tag-solid, var(--text-strong));
+  border-color: var(--tag-solid, var(--text-strong));
+  color: var(--tag-on);
+}

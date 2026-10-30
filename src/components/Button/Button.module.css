@@ -1,0 +1,208 @@
+.button {
+  --btn-bg: transparent;
+  --btn-fg: var(--text-strong);
+  --btn-border: transparent;
+  --btn-bg-hover: var(--btn-bg);
+  --btn-fg-hover: var(--btn-fg);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 2.75rem;
+  padding: 0.8em 1.7em;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-pill);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-base) var(--ease-standard),
+    color var(--dur-base) var(--ease-standard),
+    border-color var(--dur-base) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard);
+}
+
+.button:hover {
+  background: var(--btn-bg-hover);
+  color: var(--btn-fg-hover);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.icon {
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+
+.button:hover .iconEnd {
+  transform: translateX(3px);
+}
+
+.label {
+  display: inline-block;
+}
+
+/* variants */
+.primary {
+  --btn-bg: var(--action-primary);
+  --btn-fg: var(--action-primary-text);
+  --btn-bg-hover: var(--action-primary-hover);
+}
+
+.secondary {
+  --btn-border: var(--border-strong);
+  --btn-fg: var(--text-strong);
+  --btn-bg-hover: var(--text-strong);
+  --btn-fg-hover: var(--bg-canvas);
+}
+
+.accent {
+  --btn-bg: var(--action-accent);
+  --btn-fg: var(--action-accent-text);
+  --btn-bg-hover: var(--action-accent-hover);
+}
+
+.sun {
+  --btn-bg: var(--action-sun);
+  --btn-fg: var(--action-sun-text);
+  --btn-bg-hover: var(--action-sun-hover);
+}
+
+.inverse {
+  --btn-bg: rgba(4, 41, 43, 0.16);
+  --btn-border: var(--color-sunshine-50);
+  --btn-fg: var(--color-sunshine-50);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  --btn-bg-hover: var(--color-sunshine-50);
+  --btn-fg-hover: var(--text-strong);
+}
+
+.link {
+  min-height: 0;
+  padding: 0.35em 0;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  --btn-border: currentColor;
+  --btn-fg: inherit;
+}
+
+.link:hover {
+  background: transparent;
+  opacity: 0.75;
+}
+
+/* sizes */
+.sm {
+  min-height: 2.25rem;
+  padding: 0.6em 1.2em;
+  font-size: var(--step--2);
+}
+
+.lg {
+  min-height: 3.25rem;
+  padding: 1em 2.2em;
+  font-size: var(--step-0);
+  letter-spacing: 0.12em;
+}
+
+.link.sm,
+.link.lg {
+  min-height: 0;
+  padding-inline: 0;
+}
+
+.full {
+  width: 100%;
+}
+
+/* icon buttons */
+.iconButton {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 1.1rem;
+  transition:
+    background-color var(--dur-base) var(--ease-standard),
+    color var(--dur-base) var(--ease-standard);
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ib-plain:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.ib-outline {
+  border-color: currentColor;
+}
+
+.ib-outline:hover {
+  background: var(--text-strong);
+  border-color: var(--text-strong);
+  color: var(--bg-canvas);
+}
+
+.ib-solid {
+  background: var(--action-primary);
+  color: var(--action-primary-text);
+}
+
+.ib-solid:hover {
+  background: var(--action-primary-hover);
+}
+
+.ib-sm {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.95rem;
+}
+
+.ib-lg {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.3rem;
+}
+
+.badge {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.1rem;
+  display: grid;
+  place-items: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0 0.3rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-coral-500);
+  color: var(--color-lagoon-950);
+  font-size: 0.68rem;
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+}

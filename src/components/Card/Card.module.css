@@ -1,0 +1,138 @@
+/* note card */
+.note {
+  --note-bg: var(--color-sunshine-500);
+  --note-line: var(--color-lagoon-900);
+  --note-fg: var(--color-lagoon-950);
+
+  display: grid;
+  gap: var(--space-m);
+  justify-items: center;
+  margin: 0;
+  padding: var(--space-m) var(--space-m) var(--space-s);
+  border: clamp(6px, 0.4rem + 0.5vw, 14px) solid var(--note-line);
+  background: var(--note-bg);
+  color: var(--note-fg);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.coral {
+  --note-bg: var(--color-coral-200);
+  --note-line: var(--color-coral-800);
+}
+
+.lagoon {
+  --note-bg: var(--color-lagoon-700);
+  --note-line: var(--color-lagoon-950);
+  --note-fg: var(--color-sunshine-50);
+}
+
+.meta,
+.labels {
+  width: 100%;
+  font-size: var(--step--2);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.hand {
+  font-size: var(--step-2);
+  color: var(--color-lagoon-950);
+}
+
+.body {
+  max-width: 34rem;
+  margin: 0;
+  font-size: var(--step-0);
+  line-height: var(--lh-loose);
+}
+
+.signature {
+  margin-top: calc(-1 * var(--space-xs));
+  font-family: var(--font-hand);
+  font-size: var(--step-2);
+}
+
+/* value card */
+.value {
+  --v-bg: var(--color-sunshine-50);
+  --v-fg: var(--text-body);
+  --v-title: var(--text-strong);
+
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-xs);
+  min-height: 100%;
+  padding: var(--space-m);
+  border-radius: var(--radius-lg);
+  background: var(--v-bg);
+  color: var(--v-fg);
+  rotate: var(--tilt);
+  box-shadow: var(--shadow-md);
+  transition: rotate var(--dur-slow) var(--ease-standard), translate var(--dur-slow) var(--ease-standard);
+}
+
+.value:hover {
+  rotate: 0deg;
+  translate: 0 -6px;
+}
+
+.v-lagoon {
+  --v-bg: var(--color-lagoon-700);
+  --v-fg: var(--color-lagoon-50);
+  --v-title: var(--color-sunshine-50);
+}
+
+.v-coral {
+  --v-bg: var(--color-coral-500);
+  --v-fg: var(--color-lagoon-950);
+  --v-title: var(--color-lagoon-950);
+}
+
+.v-sunshine {
+  --v-bg: var(--color-sunshine-500);
+  --v-fg: var(--color-lagoon-950);
+  --v-title: var(--color-lagoon-950);
+}
+
+.index {
+  justify-self: start;
+  padding: 0.2em 0.8em;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  font-size: var(--step--2);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.12em;
+}
+
+.art {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.vtitle {
+  color: var(--v-title);
+  font-size: var(--step-2);
+  font-weight: 360;
+  line-height: var(--lh-snug);
+}
+
+.vtitle em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.vtext {
+  font-size: var(--step--1);
+  line-height: 1.6;
+}

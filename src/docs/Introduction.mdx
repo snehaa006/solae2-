@@ -1,0 +1,34 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# Solae design system
+
+Solae makes modest, modern swim sets for teen girls: a one-piece and matching shorts. This Storybook holds the design tokens, the component library and the mock website, all in React and TypeScript.
+
+The brief was **elegant and simple**, with **three colours only**, **fluid type**, and section-by-section ideas from the inspiration boards.
+
+## Three colours
+
+The whole interface uses three hues from the Brand Starter, and their tints and shades:
+
+<table>
+  <thead><tr><th>Role</th><th>Colour</th><th>Hex</th><th>Used for</th></tr></thead>
+  <tbody><tr><td>Blue</td><td><strong>Lagoon</strong></td><td><code>#119DA4</code></td><td>Text (its deepest shades), primary buttons, dark sections</td></tr><tr><td>Pink</td><td><strong>Coral</strong></td><td><code>#F07167</code></td><td>Accents, the "how we're different" band, badges</td></tr><tr><td>Yellow</td><td><strong>Sunshine</strong></td><td><code>#F8E077</code></td><td>The page colour (its palest tint), highlights, the sun</td></tr></tbody>
+</table>
+
+Even the "neutrals" come from these: body text is Lagoon 900, headings Lagoon 950, and the page is Sunshine 50. The swimsuit collection colours appear only on products and their swatches, as the Brand Starter asks.
+
+## How it is built
+
+- **Tokens** live in `src/tokens/*.ts`. `npm run tokens` writes them to `src/styles/tokens.css` (CSS variables) and `tokens/tokens.json` (W3C design-token format, ready for Figma Tokens Studio).
+- **Fluid type and space** grow smoothly between a 360px phone and a 1440px desktop with `clamp()`. Resize the canvas to see it.
+- **Components** live in `src/components`, one folder each, styled with CSS Modules that read only the semantic tokens.
+- **The website** lives in `src/site`, built only from the library.
+
+## Where each section came from
+
+<table>
+  <thead><tr><th>Section</th><th>Inspiration</th><th>What we took</th></tr></thead>
+  <tbody><tr><td>Header</td><td>Sage</td><td>A frosted pill that floats over the hero</td></tr><tr><td>Hero</td><td>Sage, The Queen</td><td>A full-bleed photo with the wordmark huge across its foot; a serif line with one italic word</td></tr><tr><td>Announcement bar</td><td>Kava</td><td>A thin running line of short promises</td></tr><tr><td>Intro</td><td>Sage, The Queen</td><td>A calm serif statement, a handwritten aside, one soft-cornered photo</td></tr><tr><td>Promises</td><td>Kava</td><td>Line icons in rings on a pale band</td></tr><tr><td>Categories</td><td>Dollop, Helm House</td><td>Product cut-outs on a bold blue ground; arch and oval frames with a thin ring and italic captions</td></tr><tr><td>Wave ribbon</td><td>Kava, Dollop, the gastrobox site</td><td>A ribbon of words drifting across a section edge</td></tr><tr><td>Featured set</td><td>Kava, Thynk Natural</td><td>The product large in a colour block; a zig-zag "New!" seal and outlined pills</td></tr><tr><td>Summer edit</td><td>Thynk Natural</td><td>Alternating rows, notched frames, price seals, check-mark lists, sparkle dividers</td></tr><tr><td>How we're different</td><td>Helm House, the gastrobox site</td><td>A colour band edged with check strips; tilted, numbered cards</td></tr><tr><td>Lookbook</td><td>The Queen</td><td>Giant repeated words behind three photo cards</td></tr><tr><td>Note from Ghalia</td><td>Seaborn Co.</td><td>Cabana stripes and a bordered thank-you card with a line on tape</td></tr><tr><td>Footer</td><td>Dollop</td><td>A check strip, a pill sign-up, and the brand mark huge and cut off at the bottom</td></tr><tr><td>Product stickers</td><td>The previous draft</td><td>Real swimsuit cut-outs, recoloured into every collection colour</td></tr></tbody>
+</table>

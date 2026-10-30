@@ -1,0 +1,21 @@
+.logo {
+  display: block;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.primary {
+  width: 12rem;
+}
+
+.horizontal {
+  width: 9rem;
+}
+
+.sun {
+  width: 4rem;
+}
+
+.wordmark {
+  width: 8rem;
+}

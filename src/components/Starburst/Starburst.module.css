@@ -1,0 +1,68 @@
+.burst {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  container-type: inline-size;
+}
+
+.shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--burst-bg);
+  stroke: var(--burst-line);
+  stroke-width: 0.8;
+}
+
+.spin {
+  animation: spin 40s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  position: relative;
+  max-width: 78%;
+  color: var(--burst-fg);
+  font-family: var(--font-display);
+  font-size: 24cqi;
+  font-weight: 420;
+  font-variation-settings: "SOFT" 100;
+  line-height: 1;
+  text-align: center;
+}
+
+.content small {
+  display: block;
+  margin-bottom: 0.3em;
+  font-family: var(--font-sans);
+  font-size: 0.42em;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sunshine {
+  --burst-bg: var(--color-sunshine-500);
+  --burst-line: var(--color-sunshine-800);
+  --burst-fg: var(--color-lagoon-950);
+}
+
+.coral {
+  --burst-bg: var(--color-coral-500);
+  --burst-line: var(--color-coral-800);
+  --burst-fg: var(--color-lagoon-950);
+}
+
+.lagoon {
+  --burst-bg: var(--color-lagoon-700);
+  --burst-line: var(--color-lagoon-950);
+  --burst-fg: var(--color-sunshine-50);
+}

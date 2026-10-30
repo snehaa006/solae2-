@@ -1,0 +1,266 @@
+.hero {
+  padding-top: var(--space-xl);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.heroText {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-s);
+}
+
+.heroSun {
+  position: relative;
+  margin: 0;
+}
+
+.heroSun svg {
+  width: 100%;
+}
+
+.heroHand {
+  position: absolute;
+  right: 0;
+  bottom: -0.6em;
+  color: var(--color-coral-700);
+  font-size: var(--step-1);
+}
+
+@media (max-width: 760px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroSun {
+    max-width: 18rem;
+  }
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: var(--space-2xl);
+}
+
+@media (max-width: 860px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.storyAside {
+  position: sticky;
+  top: 7rem;
+  display: grid;
+  gap: var(--space-l);
+}
+
+@media (max-width: 860px) {
+  .storyAside {
+    position: static;
+  }
+}
+
+.stamp {
+  max-width: 20rem;
+  rotate: -3deg;
+}
+
+.storyText {
+  display: grid;
+  gap: var(--space-s);
+  max-width: 38rem;
+  font-size: var(--step-1);
+  line-height: 1.7;
+}
+
+.storyText em {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.lead {
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 340;
+  line-height: var(--lh-snug);
+}
+
+.lead::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  color: var(--color-coral-600);
+  font-size: 2.6em;
+  font-style: italic;
+  line-height: 0.8;
+}
+
+.sign {
+  margin-top: var(--space-xs);
+  color: var(--color-coral-700);
+  font-size: var(--step-3);
+}
+
+.nameInner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-l);
+}
+
+.nameWord {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-s) var(--space-l);
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: var(--step-7);
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  line-height: 1;
+}
+
+.nameArrow {
+  font-style: normal;
+  font-weight: 200;
+}
+
+.nameMark {
+  width: clamp(12rem, 8rem + 16vw, 24rem);
+}
+
+.vm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+}
+
+.vm > div {
+  display: grid;
+  align-content: start;
+  gap: var(--space-s);
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--border-inverse);
+}
+
+.vmText {
+  font-weight: 320;
+  line-height: 1.25;
+}
+
+@media (max-width: 760px) {
+  .vm {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lookHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-s);
+  margin-bottom: var(--space-xl);
+}
+
+.wall {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-l) var(--space-m);
+}
+
+.wall figure {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
+}
+
+.wall figcaption {
+  color: var(--color-coral-700);
+  font-size: var(--step-1);
+}
+
+.w1 {
+  grid-column: 1 / span 4;
+}
+
+.w2 {
+  grid-column: 6 / span 3;
+  align-self: center;
+  rotate: 2deg;
+}
+
+.w3 {
+  grid-column: 10 / span 3;
+  margin-top: var(--space-2xl) !important;
+}
+
+.w4 {
+  grid-column: 1 / span 3;
+  rotate: -2deg;
+}
+
+.w5 {
+  grid-column: 5 / span 4;
+  margin-top: var(--space-2xl) !important;
+}
+
+.w6 {
+  grid-column: 10 / span 3;
+}
+
+.wallArt {
+  position: absolute;
+  inset: 6% 10%;
+  width: auto;
+}
+
+.wallSticker {
+  position: absolute;
+  right: 26%;
+  top: 40%;
+  width: clamp(6rem, 4rem + 8vw, 11rem);
+  z-index: 2;
+}
+
+@media (max-width: 760px) {
+  .wall {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wall figure {
+    grid-column: auto;
+    margin-top: 0 !important;
+  }
+
+  .wallSticker {
+    display: none;
+  }
+}
+
+.cta {
+  padding-block: var(--space-2xl);
+  place-items: center;
+}
+
+.ctaCard {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-m);
+  max-width: calc(100% - 2 * var(--space-gutter));
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: var(--radius-lg);
+  background: var(--bg-canvas);
+  box-shadow: var(--shadow-lg);
+}

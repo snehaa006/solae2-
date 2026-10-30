@@ -1,0 +1,125 @@
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.label {
+  color: var(--text-strong);
+  font-size: var(--step--1);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.input {
+  min-height: 3rem;
+  padding: 0.7em 1.1em;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-strong);
+  transition: border-color var(--dur-base) var(--ease-standard);
+}
+
+.input:hover {
+  border-color: var(--border-strong);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+  border-color: var(--border-strong);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--state-danger);
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.error {
+  color: var(--state-danger);
+  font-size: var(--step--1);
+}
+
+.newsletter {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 26rem;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.25rem 0.25rem 1.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  transition: box-shadow var(--dur-base) var(--ease-standard);
+}
+
+.pill:focus-within {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 35%, transparent);
+}
+
+.pillInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.5rem;
+  border: 0;
+  background: transparent;
+  color: var(--text-strong);
+}
+
+.pillInput::placeholder {
+  color: var(--text-muted);
+}
+
+.pillInput:focus {
+  outline: none;
+}
+
+.go {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--action-primary);
+  color: var(--action-primary-text);
+  transition: background-color var(--dur-base) var(--ease-standard);
+}
+
+.go:hover {
+  background: var(--action-primary-hover);
+}
+
+.inverse .pill {
+  border-color: var(--color-sunshine-50);
+}
+
+.inverse .pillInput,
+.inverse.done {
+  color: var(--color-sunshine-50);
+}
+
+.inverse .pillInput::placeholder {
+  color: var(--color-lagoon-200);
+}
+
+.inverse .go {
+  background: var(--color-sunshine-500);
+  color: var(--color-lagoon-950);
+}
+
+.done {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--text-strong);
+}

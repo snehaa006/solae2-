@@ -1,0 +1,31 @@
+.sparkle {
+  display: block;
+  aspect-ratio: 1;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.divider {
+  position: relative;
+  height: 1px;
+  background: var(--border-default);
+  color: var(--text-strong);
+}
+
+.pin {
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.start .pin {
+  left: 12%;
+}
+
+.center .pin {
+  left: 50%;
+}
+
+.end .pin {
+  left: 88%;
+}
